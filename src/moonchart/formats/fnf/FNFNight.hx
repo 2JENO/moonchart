@@ -6,6 +6,8 @@ import moonchart.backend.Util;
 import moonchart.formats.BasicFormat;
 import moonchart.formats.fnf.FNFGlobal;
 
+using StringTools;
+
 enum abstract FNFNightEvent(String) from String to String
 {
 	var GF_SECTION = "FNF_NIGHT_GF_SECTION";

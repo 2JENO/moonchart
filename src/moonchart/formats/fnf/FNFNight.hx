@@ -446,6 +446,29 @@ typedef FNFLegacyNightSection =
 	bpm:Float
 }
 
+/* typedef FNFLegacyNightFormat =
+{
+	song:String,
+	bpm:Float,
+	speed:Float,
+	needsVoices:Bool,
+	validScore:Bool,
+	player1:String,
+	player2:String,
+	notes:Array<FNFLegacyNightSection>
+}
+
+typedef FNFLegacyNightSection =
+{
+	mustHitSection:Bool,
+	lengthInSteps:Int,
+	sectionNotes:Array<FNFLegacyNightNote>,
+	altAnim:Bool,
+	changeBPM:Bool,
+	bpm:Float
+}
+ */
+
 typedef NightChar =
 {
 	name:String,
@@ -915,28 +938,6 @@ class FNFLegacyNightBasic<T:FNFLegacyNightFormat> extends BasicJsonFormat<{song:
 
 		return rawJson;
 	}
-}
-
-typedef FNFLegacyNightFormat =
-{
-	song:String,
-	bpm:Float,
-	speed:Float,
-	needsVoices:Bool,
-	validScore:Bool,
-	player1:String,
-	player2:String,
-	notes:Array<FNFLegacyNightSection>
-}
-
-typedef FNFLegacyNightSection =
-{
-	mustHitSection:Bool,
-	lengthInSteps:Int,
-	sectionNotes:Array<FNFLegacyNightNote>,
-	altAnim:Bool,
-	changeBPM:Bool,
-	bpm:Float
 }
 
 // TODO: FNF legacy and vslice (?) have the quirk of having lengths be 1 step crochet behind their actual length

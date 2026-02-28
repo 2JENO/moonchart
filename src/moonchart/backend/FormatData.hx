@@ -39,7 +39,7 @@ enum abstract Format(String) from String to String
 	public static function getList():Array<FormatData>
 	{
 		return [
-			FNFNight.FNFLegacyNight.__getFormat(),
+			moonchart.formats.fnf.FNFNight.FNFLegacyNight.__getFormat(),
 			FNFLegacy.__getFormat(),
 			FNFPsych.__getFormat(),
 			FNFTroll.__getFormat(),

@@ -14,6 +14,7 @@ enum abstract PossibleValue(Int) from Int to Int
 
 enum abstract Format(String) from String to String
 {
+	var FNF_LEGACY_NIGHT;
 	var FNF_LEGACY;
 	var FNF_LEGACY_PSYCH;
 	var FNF_LEGACY_TROLL;
@@ -23,6 +24,7 @@ enum abstract Format(String) from String to String
 	var FNF_CODENAME;
 	var FNF_LUDUM_DARE;
 	var FNF_VSLICE;
+	var FNF_NIGHT;
 	var GUITAR_HERO;
 	var OSU_MANIA;
 	var QUAVER;
@@ -37,6 +39,7 @@ enum abstract Format(String) from String to String
 	public static function getList():Array<FormatData>
 	{
 		return [
+			FNFNight.FNFLegacyNight.__getFormat(),
 			FNFLegacy.__getFormat(),
 			FNFPsych.__getFormat(),
 			FNFTroll.__getFormat(),
@@ -46,6 +49,7 @@ enum abstract Format(String) from String to String
 			FNFCodename.__getFormat(),
 			FNFLudumDare.__getFormat(),
 			FNFVSlice.__getFormat(),
+			FNFNight.__getFormat(),
 			GuitarHero.__getFormat(),
 			OsuMania.__getFormat(),
 			Quaver.__getFormat(),

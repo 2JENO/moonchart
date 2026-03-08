@@ -129,9 +129,9 @@ class FNFNightBasic<T:NightJsonFormat> extends FNFLegacyNightBasic<T>
 					if (rawType != null && (rawType is Int || rawType is Float)) {
 						var typeIdx:Int = Std.int(rawType);
 						// 이름이 있으면 이름으로, 없으면 숫자 문자열로 저장
-						if (typeIdx > 0 && originalNoteTypes.length > typeIdx)
+						/* if (typeIdx > 0 && originalNoteTypes.length > typeIdx)
 							note.type = originalNoteTypes[typeIdx]; 
-						else if (typeIdx > 0)
+						else */ if (typeIdx > 0)
 							note.type = Std.string(typeIdx);
 						else
 							note.type = null;
@@ -258,7 +258,7 @@ class FNFNightBasic<T:NightJsonFormat> extends FNFLegacyNightBasic<T>
       }
     }
     
-    song._editorLanes = Std.int(Math.max(2, Math.ceil((song.strumlines.length))));
+    song._editorLanes = Std.int(Math.max(3, Math.ceil((song.strumlines.length))));
 
     song.artist = chart.meta.extraData.get(SONG_ARTIST) ?? null;
     song.charter = chart.meta.extraData.get(SONG_CHARTER) ?? null;

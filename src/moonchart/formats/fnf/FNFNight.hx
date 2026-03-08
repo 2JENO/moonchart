@@ -79,8 +79,8 @@ class FNFNightBasic<T:NightJsonFormat> extends FNFLegacyNightBasic<T>
 	// TODO: add GF_SECTION event inputs
 	override function fromBasicFormat(chart:BasicChart, ?diff:FormatDifficulty):FNFNightBasic<T>
 	{
+		var originalNoteTypes:Array<String> = [];
 		if (sourceFormat == "CNE") {
-			var originalNoteTypes:Array<String> = [];
 			var rawData:Dynamic = chart.data; // 아직 원본 상태인 chart.data 참조
 
 			if (rawData != null && Reflect.hasField(rawData, "noteTypes")) {
@@ -102,10 +102,6 @@ class FNFNightBasic<T:NightJsonFormat> extends FNFLegacyNightBasic<T>
 
     // Notes
     if (sourceFormat == "CNE") {
-			// Codename은 noteTypes를 data.noteTypes에 저장합니다.
-			var codenameData:Dynamic = chart.data;
-			var originalNoteTypes:Array<String> = cast (Reflect.field(codenameData, "noteTypes") ?? []);
-
 			for (section in song.notes) {
 				if (section.sectionNotes == null) continue;
 
@@ -129,9 +125,9 @@ class FNFNightBasic<T:NightJsonFormat> extends FNFLegacyNightBasic<T>
 					if (rawType != null && (rawType is Int || rawType is Float)) {
 						var typeIdx:Int = Std.int(rawType);
 						// 이름이 있으면 이름으로, 없으면 숫자 문자열로 저장
-						/* if (typeIdx > 0 && originalNoteTypes.length > typeIdx)
+						if (typeIdx > 0 && originalNoteTypes.length > typeIdx)
 							note.type = originalNoteTypes[typeIdx]; 
-						else */ if (typeIdx > 0)
+						else if (typeIdx > 0)
 							note.type = Std.string(typeIdx);
 						else
 							note.type = null;
